@@ -1,4 +1,4 @@
-# Datasciense @UFM 2016
+# Datascience @UFM 2016
 
 ##Profesores
 
