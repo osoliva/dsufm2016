@@ -7,6 +7,7 @@ Created on Tue Apr 19 09:27:40 2016
 
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 from __future__ import division
@@ -35,16 +36,26 @@ iris.SepalLengthCm[filtro6].count()/150
 iris.SepalLengthCm[filtro7].count()/150
 iris.SepalLengthCm[filtro8].count()/150
 
-def CDF( k, data ):
-   filtrok =  data.SepalLengthCm<=k
-   out=data.SepalLengthCm[filtrok].count()/len(data)
+def CDF( k ):
+   filtrok =  iris.SepalLengthCm<=k
+   out=iris.SepalLengthCm[filtrok].count()/len(iris)
    return out
+
+
+CDF(5,iris)
+
+CDF(5.8,iris)-CDF(0,iris)
+
+
+
 
 
 vcdf = np.vectorize(CDF)
 
-k = np.arange(3., 8., 0.1)
+k = np.arange(3, 8, 0.01)
 
 
-b
+y=vcdf(k )
+
+plt.plot(k,y)
 
